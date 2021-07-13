@@ -18,7 +18,7 @@ mysqli_close($conn);
     <title>Recipe Writer</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="./favicon.png">
 </head>
 
 <body>
@@ -29,11 +29,12 @@ mysqli_close($conn);
         <div class="row">
 
             <?php foreach ($recipes as $recipe) { ?>
-                <div class="col s12 m6" style="padding: 0px 20px;margin:20px 0px;">
+                <div class="col s12 m6" style="margin:20px 0px;">
                     <div class="card" style="box-shadow: 3px 2px 10px 2px black;padding:20px;transition: .75s;">
                         <div class="card-content center" style='border-bottom: 1px solid black;'>
                             <h6 style="text-transform: uppercase;word-wrap: break-word;color:#d95965;font-size:20px"><?php echo htmlspecialchars($recipe['title']); ?></h6>
-                            <p style="word-wrap: break-word;text-transform: capitalize;"><span style="color: #26a69a;">Ingredients : </span><?php echo htmlspecialchars($recipe['ingredients']); ?></p>
+                            <p style='text-align:left'><span style="color: #26a69a;">Ingredients : </span></p>
+                            <p style="word-wrap: break-word;text-transform: capitalize;"><?php echo htmlspecialchars($recipe['ingredients']); ?></p>
                         </div>
                         <div class="right-align read-more">
                             <a href="detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">Procedure Info</a>
