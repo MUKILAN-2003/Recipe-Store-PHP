@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+/* Footer */
+.footer-description{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.479);
+}
+
+
+/*Base Styles*/
+.brand {
+    background: #cbb09c !important;
+}
+
+.brand-text {
+    color: #cbb09c !important;
+}
+
+form input[type='text']{
+    height: 20px!important;
+}
+
+.red-text{
+    margin: 10px 0px 35px 0px!important; 
+}
+
+form {
+    max-width: 460px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.read-more a{
+    color: orange!important;
+}
+.read-more a:hover{
+    color: #26a69a!important;
+}
+
+.card:hover{
+    cursor: default;
+    transform: scale(1.15);
+    box-shadow: 0px 0px 10px 2px orange!important;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
