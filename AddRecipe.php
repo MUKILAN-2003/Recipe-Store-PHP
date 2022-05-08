@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 
     if (array_filter($errors)) {
     } else {
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $name = mysqli_real_escape_string($conn, $_POST['name']);   //escapes special characters in a string for use in an SQL query
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
         $procedure = mysqli_real_escape_string($conn, $_POST['procedure']);

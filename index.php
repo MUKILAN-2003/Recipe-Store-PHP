@@ -1,8 +1,8 @@
 <?php
-include('config/db_connect.php');
+include('config/db_connect.php');       // connect with the database
 $sql = "SELECT id,name, title, ingredients, recipe_procedure FROM recipes ORDER BY title";
-$result = mysqli_query($conn, $sql);
-$recipes = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$result = mysqli_query($conn, $sql);    // executing the query
+$recipes = mysqli_fetch_all($result, MYSQLI_ASSOC);         // fetching all data
 mysqli_free_result($result);
 mysqli_close($conn);
 
@@ -22,7 +22,7 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <?php include('template/header.php'); ?>
+    <?php include('template/header.php'); ?>        <!--Including the template file-->
     <h4 class="center" style="color:#26a69a">Recipe Store!</h4>
 
     <div class="container">
@@ -37,7 +37,7 @@ mysqli_close($conn);
                             <p style="word-wrap: break-word;text-transform: capitalize;"><?php echo htmlspecialchars($recipe['ingredients']); ?></p>
                         </div>
                         <div class="right-align read-more">
-                            <a href="detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">Procedure Info</a>
+                            <a href="detail.php?id=<?php echo htmlspecialchars($recipe['id']); ?>">Procedure Info</a>   <!--converts special characters to string-->
                         </div>
                     </div>
                 </div>

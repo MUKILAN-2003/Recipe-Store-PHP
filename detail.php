@@ -1,7 +1,7 @@
 <?php
 include('config/db_connect.php');
 
-/*if (isset($_POST['delete'])) {
+/*if (isset($_POST['delete'])) {            //Checking if there is a POST request
 
     $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
 
@@ -15,18 +15,18 @@ include('config/db_connect.php');
 }*/
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])) {           //Checking if there is a GET request
 
     $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    $sql = "SELECT * FROM recipes WHERE id = $id";
+    $sql = "SELECT * FROM recipes WHERE id = $id";          // Query for getting particular recipe data
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql);           // Connecting with database and feteching data
 
-    $recipe = mysqli_fetch_assoc($result);
+    $recipe = mysqli_fetch_assoc($result);          // return associative array.
 
-    mysqli_free_result($result);
-    mysqli_close($conn);
+    mysqli_free_result($result);   // frees the memory associated with it.
+    mysqli_close($conn);    // clossing the connection
 }
 ?>
 
@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
             <h5 style="text-align: left;color:orange">Ingredients:</h5>
             <ul style="font-size: 18px;display:flex;justify-content: center;">
                 <ul class="text">
-                    <?php foreach (explode(',', $recipe['ingredients']) as $ing) : ?>
+                    <?php foreach (explode(',', $recipe['ingredients']) as $ing) : ?>  <!--breaks a main-array into an sub-array-->
                         <li><i class="fas fa-star" style="color: #26a69a;">&nbsp;&nbsp;</i><?php echo htmlspecialchars($ing); ?></li>
                     <?php endforeach; ?>
                 </ul>
@@ -65,7 +65,7 @@ if (isset($_GET['id'])) {
 
             <!--
             <form action="detail.php" method="POST">
-                <input type="hidden" name="id_to_delete" value="<?php echo $recipe['id']; ?>">
+                <input type="hidden" name="id_to_delete" value="<?php echo $recipe['id']; ?>">      // Form to delete a Recipe
                 <input type="submit" name="delete" value="Delete" class="btn">
             </form>
         -->
